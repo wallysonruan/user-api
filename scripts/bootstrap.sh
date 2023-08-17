@@ -20,5 +20,8 @@
 
 set -e
 
+# Runs a Postgres database.
+docker run --name user_psql -e POSTGRES_PASSWORD=user -e POSTGRES_USER=user -p 5432:5432 -d postgres
+
 # Install all the dependencies declared in the requirements.txt file
 pip install -r "environment_configs/requirements.txt"
