@@ -1,7 +1,7 @@
 """added_unique_constraint_to_user_id
 
 Revision ID: bddb1af50f35
-Revises: a1b307356499
+Revises: 530aeb23b304
 Create Date: 2023-08-17 15:40:32.036457
 
 """
