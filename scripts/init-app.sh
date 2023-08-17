@@ -4,6 +4,6 @@ set -e
 
 cd ..
 
-docker build . -t "teste"
+docker build . -t "user-app"
 
 docker-compose up
