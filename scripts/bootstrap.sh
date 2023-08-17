@@ -7,7 +7,7 @@
 # Docker command if not:
 #
 # docker run --name user_psql -e POSTGRES_PASSWORD=user
-# -e POSTGRES_USER=user -p 5432:5434 -d postgres
+# -e POSTGRES_USER=user -p 5432:5432 -d postgres
 #
 # 2. You've a virtual environment running.
 #
@@ -21,4 +21,4 @@
 set -e
 
 # Install all the dependencies declared in the requirements.txt file
-pip install -r "requirements.txt"
+pip install -r "environment_configs/requirements.txt"
