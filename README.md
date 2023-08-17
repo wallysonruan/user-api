@@ -25,11 +25,22 @@ To set up the development environment for this project, you'll need the followin
 
 1. Clone the repository: `git clone https://github.com/wallysonruan/user-api.git`
 2. Go to the user-api/ folder.
-3. Run `python3 -m venv .`, to start a virtual environment.
-4. Go to the script/ folder.
-5. Run `bash bootstrap.sh`, to start a Postgres database in a container (you can not have any other process running on the port 5432), and install all the dependencies needed.
-6. Run `bash init-app`, to start the application.
-7. Access the API endpoints via a web browser or API client, you can check the `http://localhost:8000/docs` to see all endpoints.
+
+### Local
+   1. Run `python3 -m venv .`, to start a virtual environment.
+   2. Go to the scripts/ folder.
+   3. Run `bash bootstrap.sh`, to start a Postgres database in a container (you can not have any other process 
+   running on the port 5432), and install all the dependencies needed.
+   4. Run `uvicorn main:app --reload` – make sure you are on the app home folder.
+   5. Access the API endpoints via a web browser or API client, you can check the `http://localhost:8000/docs`
+   to see all endpoints.
+
+### Container
+   1. Go to the scripts/ folder.
+   2. Run `bash init-app.sh`, to start the Postgres database (you can not have any other process 
+   running on the port 5432), and the application in containers.
+   3. Access the API endpoints via a web browser or API client, you can check the `http://localhost:8000/docs`
+   to see all endpoints.
 
 ## Roadmap
 
