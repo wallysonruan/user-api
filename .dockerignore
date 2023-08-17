@@ -1,0 +1,6 @@
+scripts/bootstrap.sh
+scripts/init-app.sh
+venv/
+Dockerfile
+docker-compose.yaml
+.dockerignore
