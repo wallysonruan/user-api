@@ -1,13 +1,8 @@
-import sqlalchemy
 from fastapi import FastAPI
 from user.routers.userRoutes import router as user_router
-from database.database import database, DATABASE_URL
+from database.database import database
 
 app = FastAPI()
-
-engine = sqlalchemy.create_engine(DATABASE_URL)
-metadata = sqlalchemy.MetaData()
-metadata.create_all(engine)
 
 
 @app.on_event("startup")
