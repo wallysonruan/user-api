@@ -1,8 +1,9 @@
 import sqlalchemy
-from sqlalchemy import UniqueConstraint, CheckConstraint
+from sqlalchemy import UniqueConstraint
 
 from sqlalchemy.dialects.postgresql import UUID
 
+from user.models.Enum.userRolesEnum import UserRolesEnum
 
 metadata = sqlalchemy.MetaData()
 
@@ -15,6 +16,13 @@ table = sqlalchemy.Table(
                       server_default=sqlalchemy.text("gen_random_uuid()")),
     sqlalchemy.Column("first_name", sqlalchemy.String),
     sqlalchemy.Column("last_name", sqlalchemy.String),
+
+    # A custom function was created in the alembic file responsible for migrating this code
+    # b7d62690dd11_added_role_column_and_enum_constraint
+    sqlalchemy.Column("role",
+                      sqlalchemy.Enum(
+                          UserRolesEnum, name="user_roles_enum", create_type=False),
+                      nullable=False),
 
     # This strategy allows to set a name to the constraint
     UniqueConstraint("id", name="id_unique"),
