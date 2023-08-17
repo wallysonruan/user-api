@@ -28,7 +28,7 @@ def upgrade() -> None:
 
     # Create a constraint in the database that will block all values that are not part of the enum
     op.add_column('user',
-                  sa.Column('role', sa.Enum(name='user_roles_enum'), nullable=False)
+                  sa.Column('role', sa.Enum(name='user_roles_enum'), server_default='usr')
                   )
 
 
