@@ -29,4 +29,10 @@ class UserRoleUpdateDtoRequest(BaseModel):
 
 class UserRoleUpdateDtoResponse(BaseModel):
     id: UUID
-    role: UserRolesEnum
+    role: str
+
+    @field_validator("role")
+    def check_if_role_is_valid(cls, value: str):
+        if not UserRolesEnum.is_string_in_enum(value):
+            raise ValueError(f'Role not valid! Valid values: {UserRolesEnum.to_string()}')
+        return value
