@@ -1,4 +1,4 @@
-"""added role column
+"""added role column and enum constraint
 
 Revision ID: b7d62690dd11
 Revises: bddb1af50f35
@@ -20,8 +20,11 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
+    # Drop the custom ENUM type if it exists
+    op.execute("DROP TYPE IF EXISTS user_roles_enum")
+
     # Create a datatype in the database
-    op.execute("CREATE TYPE user_roles_enum AS ENUM {}".format(UserRolesEnum.get_all_roles()))
+    op.execute("CREATE TYPE user_roles_enum AS ENUM ('usr', 'adm')")
 
     # Create a constraint in the database that will block all values that are not part of the enum
     op.add_column('user',

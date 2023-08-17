@@ -1,4 +1,4 @@
-"""added_unique_constraint_to_user_id
+"""added unique constraint to user id
 
 Revision ID: bddb1af50f35
 Revises: 530aeb23b304
@@ -8,7 +8,6 @@ Create Date: 2023-08-17 15:40:32.036457
 from typing import Sequence, Union
 
 from alembic import op
-import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
