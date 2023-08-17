@@ -40,3 +40,11 @@ async def get_user_by_id(user_id: UUID) -> List[UserDtoResponse]:
 async def delete_user_by_id(user_id: UUID):
     query = table.delete().where(table.columns.id == user_id)
     await database.execute(query)
+
+
+@router.patch(DEFAULT_URL)
+async def update_user_role(user_role_update: UserRoleUpdateDtoRequest) -> List[UserRoleUpdateDtoResponse]:
+    query = table.update().where(table.columns.id == user_role_update.id).values(role=user_role_update.role)
+    await database.execute(query)
+    query = table.select().where(table.columns.id == user_role_update.id)
+    return await database.fetch_all(query)
