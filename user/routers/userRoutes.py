@@ -2,11 +2,11 @@ from typing import List
 from uuid import UUID
 
 import sqlalchemy
-from fastapi import APIRouter, status
-from user.models.Dtos.userDtoRequest import UserDtoRequest
+from fastapi import APIRouter
+
 from database.database import database, DATABASE_URL
 from user.models.User import table
-from user.models.Dtos.userDtoResponse import UserDtoResponse
+from user.models.userDtos import UserDtoResponse, UserDtoRequest, UserRoleUpdateDtoRequest, UserRoleUpdateDtoResponse
 
 router = APIRouter()
 
