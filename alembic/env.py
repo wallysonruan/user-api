@@ -7,10 +7,15 @@ from alembic import context
 
 from user.models.User import metadata
 
+from environment_configs import env
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+# Dinamically insert DB_URL variable declared in .env file, check environment_configs/env.py
+section = config.config_ini_section
+config.set_section_option(section, "DB_URL", env.DB_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
