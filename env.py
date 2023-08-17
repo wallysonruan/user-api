@@ -1,5 +1,9 @@
 from decouple import config
 
+"""
+This module exists only to import the variables declared in the .env file into the Python context.
+"""
+
 db_type = config('DB_TYPE')
 db_host = config('DB_HOST')
 db_port = config('DB_PORT')
