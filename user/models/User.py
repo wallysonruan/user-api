@@ -21,8 +21,8 @@ table = sqlalchemy.Table(
     # b7d62690dd11_added_role_column_and_enum_constraint
     sqlalchemy.Column("role",
                       sqlalchemy.Enum(
-                          UserRolesEnum, name="user_roles_enum", create_type=False),
-                      nullable=False),
+                          UserRolesEnum, name="user_roles_enum", create_type=False)
+                      ),
 
     # This strategy allows to set a name to the constraint
     UniqueConstraint("id", name="id_unique"),
