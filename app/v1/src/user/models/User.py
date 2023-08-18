@@ -3,7 +3,7 @@ from sqlalchemy import UniqueConstraint
 
 from sqlalchemy.dialects.postgresql import UUID
 
-from user.models.Enum.userRolesEnum import UserRolesEnum
+from user.models.enums.userRolesEnum import UserRolesEnum
 
 metadata = sqlalchemy.MetaData()
 

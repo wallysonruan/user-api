@@ -2,7 +2,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, field_validator
 
-from user.models.Enum.userRolesEnum import UserRolesEnum
+from user.models.enums.userRolesEnum import UserRolesEnum
 
 
 class UserDtoResponse(BaseModel):

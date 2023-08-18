@@ -1,7 +1,7 @@
 FROM python:slim
 
 WORKDIR /usr/src/app
-COPY . ./
+COPY .. ./
 
 # Activate flag to use the database DNS instead of 'localhost', check env.py
 ENV USER_ENV=PROD
