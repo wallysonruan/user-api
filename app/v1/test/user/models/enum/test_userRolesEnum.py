@@ -1,4 +1,4 @@
-from user.models.enums.userRolesEnum import UserRolesEnum
+from v1.src.user.models.enums.userRolesEnum import UserRolesEnum
 
 
 def test_should_return_true():
