@@ -1,4 +1,5 @@
 import enum
+from typing import List, Callable, Any
 
 
 class UserRolesEnum(enum.Enum):
@@ -10,5 +11,5 @@ class UserRolesEnum(enum.Enum):
         return text in [role.value for role in UserRolesEnum]
 
     @classmethod
-    def to_string(cls) -> dict:
+    def to_string(cls) -> list[Callable[[], Any]]:
         return [role.value for role in UserRolesEnum]
