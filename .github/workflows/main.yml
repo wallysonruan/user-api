@@ -1,0 +1,10 @@
+name: Testing
+on: workflow_dispatch
+jobs:
+  bootstrap:
+    name: install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installing dependencies
+        run: echo $PWD
+  
