@@ -22,4 +22,8 @@ jobs:
           pip install -r app/v1/src/environment_configs/requirements.txt
       - name: Test
         run: |
+          echo "Assigning the app root directory path value to PYTHONPATH"
+          export PYTHONPATH=$PWD/app
+          
+          echo "Running tests"
           pytest app/v1/test

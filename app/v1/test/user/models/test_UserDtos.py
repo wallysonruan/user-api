@@ -1,7 +1,7 @@
 import uuid
 
-from v1.src.user.models.enums.userRolesEnum import UserRolesEnum
-from v1.src.user.models.userDtos import UserRoleUpdateDtoResponse, UserRoleUpdateDtoRequest
+from app.v1.src.user.models.enums.userRolesEnum import UserRolesEnum
+from app.v1.src.user.models.userDtos import UserRoleUpdateDtoResponse, UserRoleUpdateDtoRequest
 
 
 def test_should_be_sucessfull__valid_role_in_user_role_update_dto_response():
