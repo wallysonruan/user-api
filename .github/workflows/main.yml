@@ -14,15 +14,11 @@ jobs:
         with:
           sparse-checkout: |
             app
-        run: |
-          echo "The ${{ github.repository }} repository has been cloned."
       - name: Set up Python
         description: Install Python and add it to the PATH.
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-        run: |
-          echo "Python has been set up"
       - name: Install Python dependencies
         description: Install the libraries declared in the requirements.txt file.
         run: |
