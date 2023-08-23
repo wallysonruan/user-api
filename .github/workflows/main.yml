@@ -22,8 +22,9 @@ jobs:
           echo "$PWD"
           echo "-----"
           ls
-          pip install -r v1/src/environment_configs/requirements.txt
+          pip install -r app/v1/src/environment_configs/requirements.txt
           echo "Dependencies installed."
       - name: Test
         run: |
+          ls
           pytest v1/test
