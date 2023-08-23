@@ -9,22 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Repository
-        description: Clone repository and set it as the working directory.
         uses: actions/checkout@v3
         with:
           sparse-checkout: |
             app
       - name: Set up Python
-        description: Install Python and add it to the PATH.
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
       - name: Install Python dependencies
-        description: Install the libraries declared in the requirements.txt file.
         run: |
           pip install -r v1/src/environment_configs/requirements.txt
           echo "Dependencies installed."
       - name: Test
-        description: Collect and runs all the tests in the app/v1/test folder.
         run: |
           pytest v1/test
